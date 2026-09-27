@@ -1,5 +1,5 @@
 /* =====================================
-   MICROSCOPE INFORMATION
+   MICROSCOPE PART INFORMATION
 ===================================== */
 
 const microscopeParts = {
@@ -9,26 +9,41 @@ const microscopeParts = {
         icon: "🔭",
 
         description:
-            "The eyepiece is the part you look through when using a microscope.",
+            "The eyepiece is the part at the top of the microscope that the user looks through.",
 
         function:
-            "It magnifies the image produced by the objective lens so that the specimen can be viewed more clearly.",
+            "It magnifies the image produced by the objective lens so the specimen can be viewed more clearly.",
 
-        viewBox: "45 5 75 70"
+        viewBox: "82 5 48 75"
     },
 
 
-    objectives: {
-        name: "Objective Lenses",
+    bodyTube: {
+        name: "Body Tube",
         icon: "🔬",
 
         description:
-            "The objective lenses are located close to the specimen.",
+            "The body tube connects the eyepiece to the objective lenses.",
 
         function:
-            "They provide the main magnification of the specimen. Different objective lenses provide different magnification levels.",
+            "It keeps the eyepiece and objective lenses aligned so that light and the magnified image can pass through the optical system.",
 
-        viewBox: "45 40 80 70"
+        viewBox: "82 45 48 75"
+    },
+
+
+    arm: {
+        name: "Arm",
+        icon: "🦾",
+
+        description:
+            "The arm is the large curved support that forms the main frame of the microscope.",
+
+        function:
+            "It supports the upper components of the microscope and provides a safe place to hold the microscope when carrying it."
+            ,
+
+        viewBox: "15 45 100 180"
     },
 
 
@@ -37,12 +52,26 @@ const microscopeParts = {
         icon: "⚙️",
 
         description:
-            "The revolving nosepiece holds the objective lenses.",
+            "The revolving nosepiece is located below the body tube and holds the objective lenses.",
 
         function:
-            "It allows the user to rotate between different objective lenses.",
+            "It rotates so the user can switch between different objective lenses and magnification levels.",
 
-        viewBox: "40 35 90 65"
+        viewBox: "85 90 65 60"
+    },
+
+
+    objectives: {
+        name: "Objective Lenses",
+        icon: "🔬",
+
+        description:
+            "The objective lenses are the lenses located closest to the specimen.",
+
+        function:
+            "They provide the main magnification of the specimen. Different objectives provide different magnification levels.",
+
+        viewBox: "85 100 45 55"
     },
 
 
@@ -54,9 +83,9 @@ const microscopeParts = {
             "The stage is the flat platform where the microscope slide is placed.",
 
         function:
-            "It supports the specimen slide while the specimen is being observed.",
+            "It supports and positions the specimen slide so that the specimen can be observed through the objective lens.",
 
-        viewBox: "25 75 115 65"
+        viewBox: "40 130 110 50"
     },
 
 
@@ -65,12 +94,26 @@ const microscopeParts = {
         icon: "📎",
 
         description:
-            "Stage clips are small pieces located on top of the stage.",
+            "Stage clips are the small pieces located on top of the stage.",
 
         function:
-            "They hold the microscope slide securely in position.",
+            "They hold the microscope slide securely in place while the specimen is being viewed.",
 
-        viewBox: "35 75 90 40"
+        viewBox: "82 132 58 38"
+    },
+
+
+    condenser: {
+        name: "Condenser",
+        icon: "🔎",
+
+        description:
+            "The condenser is located underneath the stage.",
+
+        function:
+            "It concentrates and directs light toward the specimen to provide proper illumination.",
+
+        viewBox: "65 150 55 35"
     },
 
 
@@ -79,12 +122,12 @@ const microscopeParts = {
         icon: "⭕",
 
         description:
-            "The diaphragm is located underneath the stage.",
+            "The diaphragm is located beneath the stage near the condenser.",
 
         function:
             "It controls the amount of light passing through the specimen.",
 
-        viewBox: "35 105 90 55"
+        viewBox: "70 158 45 32"
     },
 
 
@@ -93,12 +136,12 @@ const microscopeParts = {
         icon: "⚙️",
 
         description:
-            "The coarse adjustment knob is the larger focusing knob.",
+            "The coarse adjustment knob is the larger focusing control.",
 
         function:
-            "It moves the microscope's focusing mechanism by a larger amount to bring the specimen into general focus.",
+            "It moves the focusing mechanism by a larger amount to bring the specimen into general focus.",
 
-        viewBox: "85 55 70 80"
+        viewBox: "65 160 40 40"
     },
 
 
@@ -107,26 +150,26 @@ const microscopeParts = {
         icon: "⚙️",
 
         description:
-            "The fine adjustment knob is the smaller focusing knob.",
+            "The fine adjustment knob is the smaller focusing control.",
 
         function:
-            "It makes small focusing adjustments to make the specimen image clearer.",
+            "It makes small adjustments to the focus so that the specimen image becomes sharper and clearer.",
 
-        viewBox: "95 90 55 70"
+        viewBox: "105 160 40 35"
     },
 
 
-    arm: {
-        name: "Arm",
-        icon: "🦾",
+    stageControls: {
+        name: "Mechanical Stage Controls",
+        icon: "⚙️",
 
         description:
-            "The arm is the large curved support at the back of the microscope.",
+            "The mechanical stage controls are used to move the slide and stage position.",
 
         function:
-            "It supports the upper components of the microscope.",
+            "They allow the user to move the specimen precisely from side to side and forward or backward.",
 
-        viewBox: "55 30 100 145"
+        viewBox: "103 150 40 50"
     },
 
 
@@ -138,9 +181,9 @@ const microscopeParts = {
             "The light source is located underneath the stage.",
 
         function:
-            "It provides illumination so that the specimen can be seen through the microscope.",
+            "It provides illumination that passes through the specimen so that the specimen can be seen.",
 
-        viewBox: "35 115 90 65"
+        viewBox: "65 180 55 40"
     },
 
 
@@ -152,9 +195,9 @@ const microscopeParts = {
             "The base is the bottom part of the microscope.",
 
         function:
-            "It supports the entire microscope and provides stability.",
+            "It supports the entire microscope and provides stability while the microscope is being used.",
 
-        viewBox: "10 155 145 87"
+        viewBox: "5 195 150 47"
     }
 
 };
@@ -173,12 +216,8 @@ function openEquipment(equipment) {
         document.getElementById("equipmentInfo");
 
 
-    /* Hide normal equipment information */
-
     equipmentInfo.classList.add("hidden");
 
-
-    /* Microscope */
 
     if (equipment === "microscope") {
 
@@ -194,48 +233,61 @@ function openEquipment(equipment) {
     }
 
 
-    /* Other equipment */
-
     microscopeArea.classList.add("hidden");
+
 
     const equipmentData = {
 
         centrifuge: {
             title: "Centrifuge",
+
             description:
                 "A centrifuge is a laboratory machine that separates substances in a sample by spinning them at high speed.",
+
             function:
                 "It separates components of a mixture based on differences in density."
         },
 
+
         balance: {
             title: "Digital Balance",
+
             description:
                 "A digital balance is an electronic instrument used to measure the mass of laboratory materials.",
+
             function:
                 "It measures the mass of objects or substances."
         },
 
+
         beaker: {
             title: "Beaker",
+
             description:
                 "A beaker is a common laboratory container used for holding, mixing, and heating substances.",
+
             function:
                 "It is mainly used to contain and mix liquids."
         },
 
+
         thermometer: {
             title: "Thermometer",
+
             description:
                 "A thermometer is an instrument used to measure temperature.",
+
             function:
                 "It measures the temperature of a substance or environment."
         },
 
+
         burner: {
             title: "Bunsen Burner",
+
             description:
                 "A Bunsen burner is a laboratory device that produces a flame for heating.",
+
             function:
                 "It provides a controlled heat source for appropriate laboratory procedures."
         }
@@ -248,16 +300,13 @@ function openEquipment(equipment) {
     if (!data) return;
 
 
-    document
-        .getElementById("equipmentTitle")
+    document.getElementById("equipmentTitle")
         .textContent = data.title;
 
-    document
-        .getElementById("equipmentDescription")
+    document.getElementById("equipmentDescription")
         .textContent = data.description;
 
-    document
-        .getElementById("equipmentFunction")
+    document.getElementById("equipmentFunction")
         .textContent = data.function;
 
 
@@ -270,7 +319,32 @@ function openEquipment(equipment) {
 
 
 /* =====================================
-   SELECT MICROSCOPE PART
+   HOVER INFORMATION
+===================================== */
+
+function hoverPart(partName) {
+
+    const part = microscopeParts[partName];
+
+    if (!part) return;
+
+
+    document.getElementById("infoIcon")
+        .textContent = part.icon;
+
+    document.getElementById("partName")
+        .textContent = part.name;
+
+    document.getElementById("partDescription")
+        .textContent = part.description;
+
+    document.getElementById("partFunction")
+        .textContent = part.function;
+}
+
+
+/* =====================================
+   CLICK / ZOOM PART
 ===================================== */
 
 function selectPart(partName) {
@@ -280,28 +354,39 @@ function selectPart(partName) {
     if (!part) return;
 
 
-    /* Remove previous selection */
+    /*
+       Remove selected state
+       from every hotspot.
+    */
 
     document
         .querySelectorAll(".microscope-part")
-        .forEach(partElement => {
-            partElement.classList.remove("selected");
+        .forEach(element => {
+
+            element.classList.remove("selected");
+
         });
 
 
-    /* Highlight selected part */
+    /*
+       Select every hotspot belonging
+       to the same part.
+    */
 
-    const selectedPart =
-        document.querySelector(
+    document
+        .querySelectorAll(
             `[data-part="${partName}"]`
-        );
+        )
+        .forEach(element => {
 
-    if (selectedPart) {
-        selectedPart.classList.add("selected");
-    }
+            element.classList.add("selected");
+
+        });
 
 
-    /* Update information */
+    /*
+       Update information panel.
+    */
 
     document.getElementById("infoIcon")
         .textContent = part.icon;
@@ -316,15 +401,35 @@ function selectPart(partName) {
         .textContent = part.function;
 
 
-    /* ZOOM */
+    /*
+       Zoom into selected part.
+    */
 
     const microscopeSVG =
         document.getElementById("microscopeSVG");
+
 
     microscopeSVG.setAttribute(
         "viewBox",
         part.viewBox
     );
+
+
+    /*
+       Smooth scroll to information
+       on smaller screens.
+    */
+
+    if (window.innerWidth <= 900) {
+
+        document
+            .querySelector(".info-panel")
+            .scrollIntoView({
+                behavior: "smooth",
+                block: "nearest"
+            });
+
+    }
 }
 
 
@@ -338,24 +443,28 @@ function resetMicroscope() {
         document.getElementById("microscopeSVG");
 
 
-    /* Return to full view */
-
     microscopeSVG.setAttribute(
         "viewBox",
         "0 0 159.6 241.87"
     );
 
 
-    /* Remove selection */
+    /*
+       Remove all highlights.
+    */
 
     document
         .querySelectorAll(".microscope-part")
         .forEach(part => {
+
             part.classList.remove("selected");
+
         });
 
 
-    /* Reset information */
+    /*
+       Reset information panel.
+    */
 
     document.getElementById("infoIcon")
         .textContent = "🔬";
@@ -365,7 +474,7 @@ function resetMicroscope() {
 
     document.getElementById("partDescription")
         .textContent =
-            "Click any part of the microscope to zoom in and learn what it does.";
+            "Hover over a microscope part to highlight it. Click it to zoom in and learn more.";
 
     document.getElementById("partFunction")
         .textContent =
@@ -377,18 +486,50 @@ function resetMicroscope() {
    KEYBOARD SUPPORT
 ===================================== */
 
-function keyboardPart(event, partName) {
+document
+    .querySelectorAll(".microscope-part")
+    .forEach(part => {
 
-    if (
-        event.key === "Enter" ||
-        event.key === " "
-    ) {
+        const partName =
+            part.dataset.part;
 
-        event.preventDefault();
 
-        selectPart(partName);
-    }
-}
+        part.addEventListener(
+            "mouseenter",
+            () => hoverPart(partName)
+        );
+
+
+        part.addEventListener(
+            "focus",
+            () => hoverPart(partName)
+        );
+
+
+        part.addEventListener(
+            "click",
+            () => selectPart(partName)
+        );
+
+
+        part.addEventListener(
+            "keydown",
+            event => {
+
+                if (
+                    event.key === "Enter" ||
+                    event.key === " "
+                ) {
+
+                    event.preventDefault();
+
+                    selectPart(partName);
+                }
+
+            }
+        );
+
+    });
 
 
 /* =====================================
