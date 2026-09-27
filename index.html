@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Interactive Virtual Laboratory</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>🔬 Interactive Virtual Laboratory</h1>
+        <p>Click a laboratory equipment to explore it.</p>
+    </header>
+
+    <main>
+
+        <!-- EQUIPMENT CATEGORIES -->
+        <section class="equipment-section">
+
+            <h2>Laboratory Equipment</h2>
+
+            <div class="equipment-grid">
+
+                <button class="equipment-card" onclick="openEquipment('microscope')">
+                    <span class="equipment-icon">🔬</span>
+                    <h3>Microscope</h3>
+                    <p>Explore microscope parts</p>
+                </button>
+
+                <button class="equipment-card" onclick="openEquipment('centrifuge')">
+                    <span class="equipment-icon">⚙️</span>
+                    <h3>Centrifuge</h3>
+                    <p>Learn its functions</p>
+                </button>
+
+                <button class="equipment-card" onclick="openEquipment('balance')">
+                    <span class="equipment-icon">⚖️</span>
+                    <h3>Digital Balance</h3>
+                    <p>Learn its functions</p>
+                </button>
+
+                <button class="equipment-card" onclick="openEquipment('beaker')">
+                    <span class="equipment-icon">🧪</span>
+                    <h3>Beaker</h3>
+                    <p>Learn its functions</p>
+                </button>
+
+                <button class="equipment-card" onclick="openEquipment('thermometer')">
+                    <span class="equipment-icon">🌡️</span>
+                    <h3>Thermometer</h3>
+                    <p>Learn its functions</p>
+                </button>
+
+                <button class="equipment-card" onclick="openEquipment('burner')">
+                    <span class="equipment-icon">🔥</span>
+                    <h3>Bunsen Burner</h3>
+                    <p>Learn its functions</p>
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- MICROSCOPE AREA -->
+        <section id="microscopeArea" class="microscope-area hidden">
+
+            <div class="viewer-header">
+                <div>
+                    <h2>🔬 Interactive Microscope</h2>
+                    <p>Click any highlighted part of the microscope.</p>
+                </div>
+
+                <button class="reset-button" onclick="resetMicroscope()">
+                    ↻ Reset View
+                </button>
+            </div>
+
+
+            <div class="microscope-layout">
+
+                <!-- 3D-STYLE MICROSCOPE -->
+                <div class="microscope-viewer">
+
+                    <svg
+                        id="microscopeSVG"
+                        viewBox="0 0 159.6 241.87"
+                        xmlns="http://www.w3.org/2000/svg"
+                        aria-label="Interactive microscope"
+                    >
+                        <!-- Supplied microscope SVG artwork -->
+                        <image
+                            href="microscope.svg"
+                            x="0"
+                            y="0"
+                            width="159.6"
+                            height="241.87"
+                            preserveAspectRatio="xMidYMid meet"
+                        />
+
+                        <!-- Transparent interaction zones over the supplied artwork -->
+                        <g class="microscope-part" data-part="eyepiece" tabindex="0" role="button" aria-label="Eyepiece"
+                           onclick="selectPart('eyepiece')" onkeydown="keyboardPart(event, 'eyepiece')">
+                            <rect x="68" y="10" width="25" height="48" fill="transparent" />
+                        </g>
+                        <g class="microscope-part" data-part="objectives" tabindex="0" role="button" aria-label="Objective lenses"
+                           onclick="selectPart('objectives')" onkeydown="keyboardPart(event, 'objectives')">
+                            <rect x="60" y="48" width="42" height="48" fill="transparent" />
+                        </g>
+                        <g class="microscope-part" data-part="nosepiece" tabindex="0" role="button" aria-label="Revolving nosepiece"
+                           onclick="selectPart('nosepiece')" onkeydown="keyboardPart(event, 'nosepiece')">
+                            <rect x="55" y="42" width="52" height="42" fill="transparent" />
+                        </g>
+                        <g class="microscope-part" data-part="stage" tabindex="0" role="button" aria-label="Stage"
+                           onclick="selectPart('stage')" onkeydown="keyboardPart(event, 'stage')">
+                            <rect x="35" y="88" width="90" height="38" fill="transparent" />
+                        </g>
+                        <g class="microscope-part" data-part="clips" tabindex="0" role="button" aria-label="Stage clips"
+                           onclick="selectPart('clips')" onkeydown="keyboardPart(event, 'clips')">
+                            <rect x="48" y="88" width="65" height="22" fill="transparent" />
+                        </g>
+                        <g class="microscope-part" data-part="diaphragm" tabindex="0" role="button" aria-label="Diaphragm"
+                           onclick="selectPart('diaphragm')" onkeydown="keyboardPart(event, 'diaphragm')">
+                            <rect x="52" y="118" width="58" height="32" fill="transparent" />
+                        </g>
+                        <g class="microscope-part" data-part="coarse" tabindex="0" role="button" aria-label="Coarse adjustment knob"
+                           onclick="selectPart('coarse')" onkeydown="keyboardPart(event, 'coarse')">
+                            <rect x="100" y="68" width="42" height="48" fill="transparent" />
+                        </g>
+                        <g class="microscope-part" data-part="fine" tabindex="0" role="button" aria-label="Fine adjustment knob"
+                           onclick="selectPart('fine')" onkeydown="keyboardPart(event, 'fine')">
+                            <rect x="108" y="103" width="35" height="42" fill="transparent" />
+                        </g>
+                        <g class="microscope-part" data-part="arm" tabindex="0" role="button" aria-label="Microscope arm"
+                           onclick="selectPart('arm')" onkeydown="keyboardPart(event, 'arm')">
+                            <rect x="78" y="43" width="68" height="125" fill="transparent" />
+                        </g>
+                        <g class="microscope-part" data-part="light" tabindex="0" role="button" aria-label="Light source"
+                           onclick="selectPart('light')" onkeydown="keyboardPart(event, 'light')">
+                            <rect x="48" y="132" width="64" height="42" fill="transparent" />
+                        </g>
+                        <g class="microscope-part" data-part="base" tabindex="0" role="button" aria-label="Microscope base"
+                           onclick="selectPart('base')" onkeydown="keyboardPart(event, 'base')">
+                            <rect x="18" y="168" width="125" height="68" fill="transparent" />
+                        </g>
+                    </svg>
+
+                </div>
+
+
+                <!-- INFORMATION PANEL -->
+
+                <aside class="info-panel">
+
+                    <div class="info-icon" id="infoIcon">
+                        🔬
+                    </div>
+
+                    <h2 id="partName">
+                        Select a Part
+                    </h2>
+
+                    <p id="partDescription">
+                        Click any part of the microscope to zoom in
+                        and learn what it does.
+                    </p>
+
+                    <div class="function-box">
+
+                        <h3>⚙️ Function</h3>
+
+                        <p id="partFunction">
+                            Choose a microscope part to see its function.
+                        </p>
+
+                    </div>
+
+                    <button
+                        class="back-button"
+                        onclick="resetMicroscope()"
+                    >
+                        ← View Entire Microscope
+                    </button>
+
+                </aside>
+
+            </div>
+
+        </section>
+
+
+        <!-- OTHER EQUIPMENT -->
+        <section id="equipmentInfo" class="equipment-info hidden">
+
+            <button
+                class="back-button"
+                onclick="closeEquipment()"
+            >
+                ← Back to Equipment
+            </button>
+
+            <h2 id="equipmentTitle"></h2>
+
+            <p id="equipmentDescription"></p>
+
+            <div class="function-box">
+                <h3>⚙️ Function</h3>
+                <p id="equipmentFunction"></p>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>Interactive Virtual Laboratory | School Project</p>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
